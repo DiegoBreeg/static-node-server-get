@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <title>URL params</title>
+</head>
+<body>
+    <div>
+        <label for="text">Digite sua mensagem, não esqueça de dizer seu nome:</label>
+        <br>
+        <textarea name="text" id="text" rows="4" cols="50"></textarea>
+        <button id="button">enviar</button>
+        <br>
+        <a href="http://localhost:3000/read">Ver mensagens enviadas</a>
+
+    </div>
+</body>
+<script>
+    const button = document.querySelector('#button');
+    button.addEventListener('click', () => {
+        const content = document.querySelector('#text').value        
+        window.location.assign(`http://localhost:3000/write?text=${content}`)
+    })
+</script>
+</html>
